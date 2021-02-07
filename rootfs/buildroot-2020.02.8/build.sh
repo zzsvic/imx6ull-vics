@@ -6,5 +6,14 @@
 #########################################################################
 
 #!/bin/bash
-sudo make 
+PASSWORD='123456'
 
+if [ "$1" = "defconfig" ];then
+	make defconfig
+elif [ "$1" = "make" ];then
+	echo "123456" | sudo -S make imx6ull_alientek_defconfig
+	echo "123456" | sudo -S make
+else
+	echo "./build.sh defconfig       -- make defconfig..."
+	echo "./build.sh make            -- make..."
+fi
