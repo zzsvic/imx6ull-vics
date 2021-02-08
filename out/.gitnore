@@ -1,0 +1,7 @@
+*.ko
+*.so
+*.a
+*.imx
+*.tar.bz2
+*.dtb
+zImage*
