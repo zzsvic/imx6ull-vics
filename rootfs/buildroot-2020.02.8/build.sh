@@ -8,12 +8,16 @@
 #!/bin/bash
 PASSWORD='123456'
 
-if [ "$1" = "defconfig" ];then
-	make defconfig
+if [ "$1" = "menuconfig" ];then
+	echo "$PASSWORD" | sudo -S 	make menuconfig
 elif [ "$1" = "make" ];then
-	echo "123456" | sudo -S make imx6ull_alientek_defconfig
-	echo "123456" | sudo -S make
+	echo "$PASSWORD" | sudo -S make imx6ull_alientek_defconfig
+	echo "$PASSWORD" | sudo -S make
+	echo -e "buildroot build done!"
+	cp output/images/rootfs.tar.bz2 ../../out/Image/rootfs-alientek-emmc.tar.bz2
+	echo -e "copy rootfs done!"
+
 else
-	echo "./build.sh defconfig       -- make defconfig..."
+	echo "./build.sh menuconfig      -- make defconfig..."
 	echo "./build.sh make            -- make..."
 fi

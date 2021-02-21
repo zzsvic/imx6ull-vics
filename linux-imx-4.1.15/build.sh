@@ -65,14 +65,14 @@ elif [ "$1" = "$EMMC" ];then
 else
 	echo "Select execute from the following command:"
 	echo "    ./build.sh clean              -- clean project"
-	echo "    ./build.sh nand menuconfig    -- make menuconfig<nand>"
+	echo "    ./build.sh emmc               -- make all<emmc>"
+	echo "    ./build.sh emmc dtbs          -- make dts<emmc>"
+	echo "    ./build.sh emmc modules       -- make modules<emmc>"
 	echo "    ./build.sh emmc menuconfig    -- make menuconfig<emmc>"
 	echo "    ./build.sh nand               -- make all<nand>"
-	echo "    ./build.sh emmc               -- make all<emmc>"
-	echo "    ./build.sh nand modules       -- make modules<nand>"
-	echo "    ./build.sh emmc modules       -- make modules<emmc>"
 	echo "    ./build.sh nand dtbs          -- make dts<nand>"
-	echo "    ./build.sh emmc dtbs          -- make dts<emmc>"
+	echo "    ./build.sh nand modules       -- make modules<nand>"
+	echo "    ./build.sh nand menuconfig    -- make menuconfig<nand>"
 fi
 
 exit

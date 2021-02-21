@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=org.freedesktop.DBus.TestSuiteEchoService
+Exec=/home/ubuntu/workspace/wpa_supplicant-2.9/tools/src/dbus-1.13.18/test/test-service

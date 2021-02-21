@@ -1,0 +1,6 @@
+[D-BUS Service]
+Name=com.example.SendDeniedByNonexistentAppArmorLabel
+Exec=/bin/false SendDeniedByNonexistentAppArmorLabel
+SystemdService=dbus-com.example.SendDeniedByNonexistentAppArmorLabel.service
+# This label is not defined in any AppArmor profile
+AssumedAppArmorLabel=/home/ubuntu/workspace/wpa_supplicant-2.9/tools/src/dbus-1.13.18/test/test-apparmor-activation-com.example.SendDeniedByNonexistentAppArmorLabel
