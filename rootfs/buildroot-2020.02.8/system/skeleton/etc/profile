@@ -2,9 +2,9 @@ export PATH=@PATH@
 
 if [ "$PS1" ]; then
 	if [ "`id -u`" -eq 0 ]; then
-		export PS1='# '
+		export PS1='[\u@\h]:\w# '
 	else
-		export PS1='$ '
+		export PS1='[\u@\h]:\w$ '
 	fi
 fi
 
@@ -17,3 +17,19 @@ for i in /etc/profile.d/*.sh ; do
 	fi
 done
 unset i
+
+
+# Creates a directory to mount the storage device
+if [ ! -d "/media/udisk" ];then
+        mkdir /media/sdcard
+fi
+
+if [ ! -d "/media/sdcard" ];then
+        mkdir /media/udisk
+fi
+
+# Create a directory to store the driver modules
+if [ ! -d "/lib/modules/4.1.15" ];then
+        mkdir -p /lib/modules/4.1.15
+fi
+
