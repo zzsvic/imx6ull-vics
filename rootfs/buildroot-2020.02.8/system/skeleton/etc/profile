@@ -21,11 +21,11 @@ unset i
 
 # Creates a directory to mount the storage device
 if [ ! -d "/media/udisk" ];then
-        mkdir /media/sdcard
+        mkdir /media/udisk
 fi
 
 if [ ! -d "/media/sdcard" ];then
-        mkdir /media/udisk
+        mkdir /media/sdcard
 fi
 
 # Create a directory to store the driver modules
