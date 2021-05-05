@@ -35,7 +35,7 @@ copy_ko(){
 	cp ./lib/crc-itu-t.ko $MOD_DIR
 	cp ./lib/crc-ccitt.ko $MOD_DIR
 	cp ./lib/crc7.ko $MOD_DIR
-	cp ./fs/fat/msdos.ko $MOD_DIR
+	# cp ./fs/fat/msdos.ko $MOD_DIR
 	cp ./fs/binfmt_misc.ko $MOD_DIR
 	cp ./fs/isofs/isofs.ko $MOD_DIR
 	cp ./fs/nls/nls_iso8859-15.ko $MOD_DIR

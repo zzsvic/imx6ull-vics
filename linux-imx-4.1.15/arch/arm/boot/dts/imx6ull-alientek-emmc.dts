@@ -146,6 +146,19 @@
 		};
 	};
 
+	led{
+		#address-cell = <1>;
+		#size-cell = <1>;
+		compatible = "vics-led";
+		status = "okey";
+		reg = <
+			0x020c406c 0x04		/* CCM_CCGR1_BASE */
+			0x020e0068 0x04		/* SW_MUX_GPIO1_IO03_BASE */
+			0x020e02f4 0x04		/* SW_PAD_GPIO1_IO03_BASE */
+			0x0209c000 0x04		/* GPIO1_DR */
+ 			0x0209c004 0x04		/* GPIO1_GDIR */
+		>;
+	};
 	key{
 		#address-cells = <1>;
 		#size-cells = <1>;
@@ -258,6 +271,13 @@
 		interrupt-parent = <&gpio5>;
 		interrupts = <0 8>;
 	};
+
+	mpu6050@68{
+		compatible = "fsl,mpu6050";
+		reg = <0x68>;
+		interrupt-parent = <&gpio1>;
+		interrupts = <9 8>;
+	};
 };
 
 &i2c2 {
@@ -290,6 +310,25 @@
 		port {
 			ov5640_ep: endpoint {
 				remote-endpoint = <&csi1_ep>;
+			};
+		};
+	};
+
+	ov2640: camera@30 { 
+		compatible = "ovti,ov2640";
+		reg = <0x30>;
+		pinctrl-names = "default";
+		pinctrl-0 = <&pinctrl_csi1>;
+		resetb-gpios = <&gpio_spi 5 0>;
+		pwdn-gpios = <&gpio_spi 6 1>;
+		clocks = <&clks IMX6UL_CLK_CSI>;
+		clock-names = "xvclk";
+		assigned-clocks = <0>;
+		assigned-clock-rates = <25000000>;
+		port { 
+			ov2640_0: endpoint { 
+				remote-endpoint = <&csi1_ep>;
+				bus-width = <8>; 
 			};
 		};
 	};
