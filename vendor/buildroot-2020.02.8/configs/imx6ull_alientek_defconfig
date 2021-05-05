@@ -1,6 +1,6 @@
 #
 # Automatically generated file; DO NOT EDIT.
-# Buildroot -g084301141-dirty Configuration
+# Buildroot -gc3a5a4382 Configuration
 #
 BR2_HAVE_DOT_CONFIG=y
 BR2_HOST_GCC_AT_LEAST_4_9=y
@@ -499,7 +499,7 @@ BR2_PACKAGE_KODI_ARCH_SUPPORTS=y
 # BR2_PACKAGE_LAME is not set
 # BR2_PACKAGE_MADPLAY is not set
 # BR2_PACKAGE_MIMIC is not set
-BR2_PACKAGE_MINIMODEM=y
+# BR2_PACKAGE_MINIMODEM is not set
 
 #
 # miraclecast needs systemd and a glibc toolchain w/ threads and wchar
@@ -979,7 +979,7 @@ BR2_PACKAGE_FLASHROM_ARCH_SUPPORTS=y
 # BR2_PACKAGE_MDEVD is not set
 # BR2_PACKAGE_MEMTESTER is not set
 # BR2_PACKAGE_MEMTOOL is not set
-# BR2_PACKAGE_MINICOM is not set
+BR2_PACKAGE_MINICOM=y
 # BR2_PACKAGE_NANOCOM is not set
 # BR2_PACKAGE_NEARD is not set
 # BR2_PACKAGE_NVME is not set
